@@ -2,10 +2,10 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2025",
-  "page_title": "Reefscape 1502 Scouting",
+  "page_title": "Reefscape 1502 Scouting v1.2",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter name",
+    { "name": "Scouter name<br>(Firstname Lastname)",
       "code": "s",
       "type": "scouter",
       "size": 15,
@@ -54,6 +54,13 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    },
+    { "name": "Team Name update 3",
+      "code": "n",
+      "type": "text",
+      "size": 15,
+      "maxSize": 50,
+      "defaultValue": "Team Name"
     },
     { "name": "Auto Start Position",
       "code": "as",
@@ -129,6 +136,10 @@ var config_data = `
       "code": "tsg",
       "type": "counter"
     },
+    { "name": "Penalties",
+      "code": "pen",
+      "type": "counter"
+    },
     { "name": "Pickup Coral From",
       "code": "tpu",
       "type": "radio",
@@ -164,8 +175,8 @@ var config_data = `
         "p": "Parked<br>",
         "o": "High Cage<br>",
         "s": "Low Cage<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+        "a": "Attempted/Failed & Parked<br>",
+        "x": "No park or climb attempted"
       },
       "defaultValue": "x"
     }
@@ -206,7 +217,7 @@ var config_data = `
       },
       "defaultValue":"3"
     },
-    { "name": "Died/Immobilized",
+    { "name": "Died/<br>Immobilized/<br>Gamepiece Stuck",
       "code": "die",
       "type": "bool"
     },
@@ -218,16 +229,22 @@ var config_data = `
       "code": "dn",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
+    { "name": "Would pick<br>for an alliance?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
+      "type": "bool"
+    },
+    { "name": "Would NOT pick<br>for an alliance?",
+      "tooltip": "Would NOT pick this robot under any circumstances",
+      "code": "dnp",
       "type": "bool"
     },
     { "name": "Comments",
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 250,
+      "defaultValue": "None"
     }
   ]
 }`;

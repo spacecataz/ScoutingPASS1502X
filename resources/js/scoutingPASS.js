@@ -682,7 +682,7 @@ function configure() {
   if(mydata.hasOwnProperty('dataFormat')) {
     dataFormat = mydata.dataFormat;
   }
-  
+
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
   }
@@ -876,7 +876,7 @@ function updateQRHeader() {
 
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (!pitScouting) {  
+  if (!pitScouting) {
     if (validateData() == false) {
       // Don't allow a swipe until all required data is filled in
       return false
@@ -915,7 +915,7 @@ function clearForm() {
     }
 
     // Robot
-    resetRobot()
+    resetRobot();
   }
 
   // Clear XY coordinates
@@ -990,6 +990,12 @@ function clearForm() {
       }
     }
   }
+
+  // Reset comment field to default:
+  if (!pitScouting) {
+    document.getElementById("input_co").value = "None";
+  }
+
   drawFields()
 }
 
@@ -1232,10 +1238,12 @@ function updateMatchStart(event) {
 function onTeamnameChange(event) {
   var newNumber = document.getElementById("input_t").value;
   var teamLabel = document.getElementById("teamname-label");
+  document.getElementById("input_n").value = getTeamName(newNumber);
   if (newNumber != "") {
     teamLabel.innerText = getTeamName(newNumber) != "" ? "You are scouting " + getTeamName(newNumber) : "That team isn't playing this match, please double check to verify correct number";
   } else {
     teamLabel.innerText = "";
+    document.getElementById("input_n").value = getTeamName(newNumber);
   }
 }
 
