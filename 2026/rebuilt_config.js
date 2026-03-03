@@ -231,6 +231,26 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
+    },
+    { "name": "Climb Speed",
+      "code": "endcs",
+      "type": "radio",
+      "choices": {
+        "2":  "< 2 seconds (FAST!) <br>",
+        "5":  "< 5 seconds (Medium)><br>",
+        "10": "> 5 seconds (slow)"
+      },
+      "defaultValue": "2"
+    },
+    { "name": "Auto Climb Location",
+      "code": "ecloc",
+      "type": "clickable_image",
+      "filename": "2026/half_field.png",
+      "dimensions": "7 10",
+      "allowableResponses": "29 30 36 37 43 44",
+      "expectedMax": 25,
+      "toggleClick": "true",
+      "shape": "circle 5 black red true"
     }
   ],
   "postmatch": [
@@ -297,13 +317,6 @@ var config_data = `
     { "name": "Excessive Penalties",
       "code": "pen",
       "type": "bool"
-    },
-    { "name": "Fuel Percentage",
-      "tooltip": "What percentage of the total fuel for this alliance did this robot score?",
-      "code": "pct",
-      "type": "number",
-      "min": 0,
-      "max": 100
     },
     { "name": "Comments",
       "code": "co",
