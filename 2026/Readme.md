@@ -1,5 +1,14 @@
 # REBUILT 2026 - ScoutingPASS Configuration Files
 
+## 1502 Overview
+This fork is updated to meet the needs of Team 1502: Technical Difficulties.
+
+The branch "NewMain" is created to resolve merging issues from previous seasons.
+A new dedicated branch will be made for each competition.
+
+
+
+
 ## Overview
 
 This directory contains configuration files for scouting the 2026 FIRST Robotics Competition game **REBUILT™ presented by Haas** using the ScoutingPASS system. These files define the data collection structure for both match scouting and pit scouting activities during competitions.

@@ -5,17 +5,17 @@ var config_data = `
   "page_title": "REBUILT",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 25,
+      "maxSize": 50,
       "required": "true"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026ilch",
+      "defaultValue": "Chelsea",
       "required": "true"
     },
     { "name": "Match Level",
@@ -55,6 +55,16 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
+    { "name": "Predicition",
+      "code": "p",
+      "type": "radio",
+      "choices":{
+        "r": "Red<br>",
+        "b": "Blue<br>",
+        "t": "Tie"
+        },
+        "defaultValue": "t"
+    },
     { "name": "Auto Start Location",
       "code": "as",
       "type": "clickable_image",
@@ -88,6 +98,17 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
+    },
+    { "name": "Approximate Accuracy",
+      "code": "autac",
+      "type": "radio",
+      "choices": {
+        "25":  " ~25% -- Low Accuracy<br>",
+        "50":  " ~50% -- Medium Accuracy<br>",
+        "75":  " ~75% -- High Accuracy<br>",
+        "100": "~100% -- Near Perfect Accuracy"
+        },
+        "defaultValue": "25"
     },
     { "name": "Climb (L1)",
       "code": "ac",
