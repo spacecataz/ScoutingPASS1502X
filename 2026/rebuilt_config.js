@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Chelsea",
+      "defaultValue": "2026miche",
       "required": "true"
     },
     { "name": "Match Level",
@@ -133,11 +133,10 @@ var config_data = `
     { "name": "Auto Climb Location",
       "code": "acloc",
       "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "29 30 36 37 43 44",
-      "expectedMax": 25,
-      "toggleClick": "true",
+      "filename": "2026/rebuilt_tower_topview.png",
+      "clickRestriction": "one",
+      "dimensions": "4 6",
+      "allowableResponses": "7 11 15 19",
       "shape": "circle 5 black red true"
     },
     { "name": "Pickup from Depot",
@@ -242,14 +241,13 @@ var config_data = `
       },
       "defaultValue": "2"
     },
-    { "name": "Auto Climb Location",
+    { "name": "Endgame Climb Location",
       "code": "ecloc",
       "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "29 30 36 37 43 44",
-      "expectedMax": 25,
-      "toggleClick": "true",
+      "filename": "2026/rebuilt_tower_topview.png",
+      "clickRestriction": "one",
+      "dimensions": "4 6",
+      "allowableResponses": "7 11 15 19",
       "shape": "circle 5 black red true"
     }
   ],
@@ -286,6 +284,18 @@ var config_data = `
         "3": "3<br>",
         "4": "4<br>",
         "5": "5 (fast)"
+      },
+      "defaultValue":"3"
+    },
+    { "name": "Intake Rating",
+      "code": "intake",
+      "type": "radio",
+      "choices": {
+        "1": "1 (slow & few balls)<br>",
+        "2": "2<br>",
+        "3": "3<br>",
+        "4": "4<br>",
+        "5": "5 (fast & many balls)"
       },
       "defaultValue":"3"
     },
