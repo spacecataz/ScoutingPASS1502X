@@ -76,7 +76,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Shooting Location",
+ { "name": "Auto Shooting Location",
       "code": "asl",
       "type": "clickable_image",
       "filename": "2026/half_field.png",
@@ -120,6 +120,26 @@ var config_data = `
       },
       "defaultValue": "x"
     },
+    { "name": "Climb Speed",
+      "code": "autocs",
+      "type": "radio",
+      "choices": {
+        "2":  "< 2 seconds (FAST!) <br>",
+        "5":  "< 5 seconds (Medium)><br>",
+        "10": "> 5 seconds (slow)"
+      },
+      "defaultValue": "2"
+    },
+    { "name": "Auto Climb Location",
+      "code": "acloc",
+      "type": "clickable_image",
+      "filename": "2026/half_field.png",
+      "dimensions": "7 10",
+      "allowableResponses": "29 30 36 37 43 44",
+      "expectedMax": 25,
+      "toggleClick": "true",
+      "shape": "circle 5 black red true"
+    },
     { "name": "Pickup from Depot",
       "code": "afd",
       "type": "bool"
@@ -131,18 +151,19 @@ var config_data = `
     { "name": "Pickup from Neutral Zone",
       "code": "aff",
       "type": "bool"
+    },
+    { "name": "Can Traverse Bump",
+      "code": "autobump",
+      "type": "bool",
+      "tooltip": "Bot can travel over the bump"
+    },
+    { "name": "Can Traverse Trench",
+    "code": "autotrench",
+    "type": "bool",
+    "tooltip": "Bot can pass under the trench"
     }
   ],
   "teleop": [
-    { "name": "Shooting Locations",
-      "code": "tsl",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-      "expectedMax": 25,
-      "shape": "circle 5 black red true"
-    },
     { "name": "Fuel Scored",
       "code": "tfs",
       "expectedMax": 150,
@@ -164,6 +185,17 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
+    { "name": "Approximate Accuracy",
+      "code": "teleac",
+      "type": "radio",
+      "choices": {
+        "25":  " ~25% -- Low Accuracy<br>",
+        "50":  " ~50% -- Medium Accuracy<br>",
+        "75":  " ~75% -- High Accuracy<br>",
+        "100": "~100% -- Near Perfect Accuracy"
+        },
+      "defaultValue": "25"
+    },
     { "name": "Pickup from Depot",
       "code": "tfd",
       "type": "bool"
@@ -175,6 +207,16 @@ var config_data = `
     { "name": "Pickup from Floor",
       "code": "tff",
       "type": "bool"
+    },
+    { "name": "Can Traverse Bump",
+      "code": "telebump",
+      "type": "bool",
+      "tooltip": "Bot can travel over the bump"
+    },
+    { "name": "Can Traverse Trench",
+    "code": "teletrench",
+    "type": "bool",
+    "tooltip": "Bot can pass under the trench"
     }
   ],
   "endgame": [
