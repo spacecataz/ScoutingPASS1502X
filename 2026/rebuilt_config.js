@@ -124,11 +124,12 @@ var config_data = `
       "code": "autocs",
       "type": "radio",
       "choices": {
+        "0": "Did not attempt <br>",
         "2":  "< 2 seconds (FAST!) <br>",
-        "5":  "< 5 seconds (Medium)><br>",
+        "5":  "< 5 seconds (Medium) <br>",
         "10": "> 5 seconds (slow)"
       },
-      "defaultValue": "2"
+      "defaultValue": "0"
     },
     { "name": "Auto Climb Location",
       "code": "acloc",
@@ -235,8 +236,9 @@ var config_data = `
       "code": "endcs",
       "type": "radio",
       "choices": {
+        "0": "Did not attempt climb <br>",
         "2":  "< 2 seconds (FAST!) <br>",
-        "5":  "< 5 seconds (Medium)><br>",
+        "5":  "< 5 seconds (Medium) <br>",
         "10": "> 5 seconds (slow)"
       },
       "defaultValue": "2"
