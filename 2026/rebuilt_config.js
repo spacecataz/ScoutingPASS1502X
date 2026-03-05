@@ -76,12 +76,12 @@ var config_data = `
     }
   ],
   "auton": [
- { "name": "Auto Shooting Location",
+ { "name": "Auto Fuel Pickup Location",
       "code": "asl",
       "type": "clickable_image",
       "filename": "2026/half_field.png",
       "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
+      "allowableResponses": "15 21 28 35 42 49 56 64 57",
       "expectedMax": 5,
       "shape": "circle 5 black red true"
     },
@@ -313,8 +313,8 @@ var config_data = `
       "code": "die",
       "type": "bool"
     },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
+    { "name": "Ball Surfing<br>(Gets stuck ontop of balls)",
+      "code": "surf",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
