@@ -227,8 +227,8 @@ var config_data = `
         "1": "Level 1<br>",
         "2": "Level 2<br>",
         "3": "Level 3<br>",
-        "a": "Attempted<br>",
-        "x": "Not Attempted"
+        "0": "Attempted<br>",
+        "-1": "Not Attempted"
       },
       "defaultValue": "x"
     },
@@ -258,10 +258,10 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "0": "Not Effective<br>",
+        "1": "Average<br>",
+        "2": "Very Effective<br>",
+        "-1": "Not Observed"
       },
       "defaultValue": "x"
     },
@@ -269,11 +269,11 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "0": "Below Average<br>",
+        "1": "Average<br>",
+        "2": "Good<br>",
+        "3": "Excellent<br>",
+        "-1": "Did not play defense"
       },
       "defaultValue": "x"
     },

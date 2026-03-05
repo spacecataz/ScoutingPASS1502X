@@ -151,7 +151,7 @@ function addTimer(table, idx, name, data) {
 function addCounter(table, idx, name, data) {
   const row = table.insertRow(idx);
   const hasExtraInc = data.hasOwnProperty('altInc1') || data.hasOwnProperty('altInc2');
-  
+
   // Error Handling
   if (!data.hasOwnProperty('code')) {
     const errorCell = row.insertCell(0);
@@ -173,24 +173,24 @@ function addCounter(table, idx, name, data) {
     // When extra increments exist, use a single cell with colspan
     titleCell.setAttribute("colspan", 2);
     titleCell.style.cssText = 'text-align: center; vertical-align: middle;';
-    
+
     // Create wrapper div for flex layout
     const wrapper = document.createElement("div");
     wrapper.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;';
-    
+
     // Create label
     const label = document.createElement("div");
     label.textContent = name;
     label.style.cssText = 'margin-bottom: 4px;';
     wrapper.appendChild(label);
-    
+
     titleCell.appendChild(wrapper);
     controlCell = wrapper;
   } else {
     // Standard two-cell layout
     titleCell.style.width = ColWidth;
     titleCell.innerHTML = `${name}&nbsp;`;
-    
+
     controlCell = row.insertCell(1);
     controlCell.style.width = ColWidth;
     controlCell.classList.add("field");
@@ -200,7 +200,7 @@ function addCounter(table, idx, name, data) {
   // Create centered container for buttons
   const centerContainer = document.createElement("div");
   centerContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; width: 100%;';
-  
+
   // Create button group
   const buttonGroup = document.createElement("div");
   buttonGroup.style.cssText = 'display: inline-flex; align-items: center; gap: 10px;';
@@ -227,11 +227,11 @@ function addCounter(table, idx, name, data) {
   if (data.altInc1) {
     buttonGroup.appendChild(createInput("button", `minusInc1_${data.code}`, -data.altInc1, -data.altInc1));
   }
-  
+
   if (data.altInc2) {
     buttonGroup.appendChild(createInput("button", `minusInc2_${data.code}`, -data.altInc2, -data.altInc2));
   }
-  
+
   buttonGroup.appendChild(createInput("button", `minus_${data.code}`, "-", -1));
 
   // Create main counter input
@@ -244,11 +244,11 @@ function addCounter(table, idx, name, data) {
   buttonGroup.appendChild(counterInput);
 
   buttonGroup.appendChild(createInput("button", `plus_${data.code}`, "+", 1));
-  
+
   if (data.altInc2) {
     buttonGroup.appendChild(createInput("button", `plusInc2_${data.code}`, `+${data.altInc2}`, data.altInc2));
   }
-  
+
   if (data.altInc1) {
     buttonGroup.appendChild(createInput("button", `plusInc1_${data.code}`, `+${data.altInc1}`, data.altInc1));
   }
@@ -753,7 +753,7 @@ function configure() {
   if(mydata.hasOwnProperty('dataFormat')) {
     dataFormat = mydata.dataFormat;
   }
-  
+
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
   }
@@ -948,7 +948,7 @@ function updateQRHeader() {
 
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (!pitScouting) {  
+  if (!pitScouting) {
     if (validateData() == false) {
       // Don't allow a swipe until all required data is filled in
       return false
@@ -1062,6 +1062,12 @@ function clearForm() {
       }
     }
   }
+
+  // Reset comment field to default:
+  if (!pitScouting) {
+    document.getElementById("input_co").value = "None";
+  }
+
   drawFields()
 }
 
