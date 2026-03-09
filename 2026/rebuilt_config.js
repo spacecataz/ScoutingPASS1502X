@@ -271,8 +271,8 @@ var config_data = `
       "choices": {
         "0": "Below Average<br>",
         "1": "Average<br>",
-        "2": "Good<br>",
-        "3": "Excellent<br>",
+        "3": "Good<br>",
+        "5": "Excellent<br>",
         "-1": "Did not play defense"
       },
       "defaultValue": "x"
