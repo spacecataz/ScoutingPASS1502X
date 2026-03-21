@@ -25,6 +25,8 @@ var options = {
 // Built from the JSON
 var requiredFields = []; //["e", "m", "l", "r", "s", "as"];
 
+//these are all the different objects we will be using in the website. They are being pulled as a table from rebuilt_config.js/rebuilt_pit_scouting.js
+//the configure() function parses the config_data
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -674,6 +676,7 @@ function addElement(table, idx, data) {
   return idx
 }
 
+//sets the required inputs
 function buildRequiredElementList(element) {
 	if (element.required == "true") {
 		requiredFields.push(element.code);
