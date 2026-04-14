@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026mibat",
+      "defaultValue": "2026micmp1",
       "required": "true"
     },
     { "name": "Match Level",
